@@ -2,7 +2,7 @@
 
 class Rover
 
-  def intialize(position)
+  def initialize(position)
 
     temp_position_array = position.split(" ")
     @x = temp_position_array[0].to_i
@@ -14,7 +14,7 @@ class Rover
   def read_instruction(instruction)
 
     instruction.each_char do |char|
-      if char == "L" || "R"
+      if char == "L" || char == "R"
         self.turn(char)
       elsif char == "M"
         self.move
@@ -69,6 +69,10 @@ class Rover
 
   end
 
+  def to_s
+    "#{@x} #{@y} #{@direction}"
+  end
+
 end
 
 # Prompting user for 5 inputs
@@ -82,7 +86,9 @@ rover1_position = gets.chomp
 rover1 = Rover.new(rover1_position)
 
 print "Instructions for Rover 1: "
-instruction = gets.chomp
+instruction1 = gets.chomp
+# apply instruction to Rover 1
+rover1.read_instruction(instruction1)
 
 # Rover 2
 print "Rover 2 Position: "
@@ -91,9 +97,13 @@ rover2_position = gets.chomp
 rover2 = Rover.new(rover2_position)
 
 print "Instructions for Rover 2: "
-instruction = gets.chomp
+instruction2 = gets.chomp
+# apply instruction to Rover 2
+rover2.read_instruction(instruction2)
 
-
+# output
+puts "The current position of Rover 1 is: #{rover1}"
+puts "The current position of Rover 2 is: #{rover2}"
 
 
 
