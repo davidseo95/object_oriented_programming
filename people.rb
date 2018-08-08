@@ -17,7 +17,7 @@ end
 class Student < Person
 
   def learn
-    "I get it!"
+    puts "I get it!"
   end
 
 end
@@ -26,8 +26,20 @@ end
 class Instructor < Person
 
   def teach
-    "Everything in Ruby is an Object"
+    puts "Everything in Ruby is an Object"
   end
 
 end
 
+# instantiating an instructor object and a student object
+chris = Instructor.new("Chris")
+puts chris.greet
+
+christina = Student.new("Christina")
+puts christina.greet
+
+chris.teach
+christina.learn
+
+# calling teach on christina (Student instance) would not work, as the teach
+# method is a instance method of the class Instructor
