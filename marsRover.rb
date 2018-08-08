@@ -71,6 +71,28 @@ class Rover
 
 end
 
+# Prompting user for 5 inputs
+print "Please enter plateau size: "
+plateau_size = gets.chomp
+
+# Rover 1
+print "Rover 1 Position: "
+rover1_position = gets.chomp
+
+rover1 = Rover.new(rover1_position)
+
+print "Instructions for Rover 1: "
+instruction = gets.chomp
+
+# Rover 2
+print "Rover 2 Position: "
+rover2_position = gets.chomp
+
+rover2 = Rover.new(rover2_position)
+
+print "Instructions for Rover 2: "
+instruction = gets.chomp
+
 
 
 
